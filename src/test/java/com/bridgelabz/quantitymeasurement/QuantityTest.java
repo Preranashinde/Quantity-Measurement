@@ -10,26 +10,22 @@ public class QuantityTest {
         Feet feet2 = new Feet(0.0);
         Assert.assertEquals(feet1, feet2);
     }
-
     @Test
     public void given0FeetAnd1Feet_shouldReturnNotEqual() {
         Feet feet1 = new Feet(0.0);
         Feet feet2 = new Feet(1.0);
         Assert.assertNotEquals(feet1, feet2);
     }
-
     @Test
     public void given1NullObject_shouldReturnNotEqual() {
         Feet feet = new Feet(0.0);
         Assert.assertNotEquals(feet, null);
     }
-
     @Test
     public void givenStringAndFeet_shouldReturnEqual() {
         Feet feet = new Feet(0.0);
         Assert.assertNotEquals(feet, "message");
     }
-
     @Test
     public void given0InchAnd0Inch_shouldReturnEqual() {
         Inch inch1 = new Inch(0.0);
@@ -50,5 +46,11 @@ public class QuantityTest {
     public void givenStringAndInch_shouldReturnNotEqual() {
         Inch inch = new Inch(0.0);
         Assert.assertNotEquals(inch, "string");
+    }
+    @Test
+    public void given0InchAnd1Inch_shouldReturnNotEqual() {
+        Inch inch1 = new Inch(0.0);
+        Inch inch2 = new Inch(1.0);
+        Assert.assertNotEquals(inch1, inch2);
     }
 }
