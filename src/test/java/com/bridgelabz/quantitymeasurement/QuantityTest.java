@@ -19,14 +19,21 @@ public class QuantityTest {
     }
 
     @Test
-    public void given1NullObject_shouldReturnFalse() {
+    public void given1NullObject_shouldReturnNotEqual() {
         Feet feet = new Feet(0.0);
         Assert.assertNotEquals(feet, null);
     }
 
     @Test
-    public void givenStringAndFeet_shouldReturnTrue() {
+    public void givenStringAndFeet_shouldReturnEqual() {
         Feet feet = new Feet(0.0);
         Assert.assertNotEquals(feet, "message");
+    }
+
+    @Test
+    public void given0InchAnd0Inch_shouldReturnEqual() {
+        Inch inch1 = new Inch(0.0);
+        Inch inch2 = new Inch(0.0);
+        Assert.assertEquals(inch1, inch2);
     }
 }
