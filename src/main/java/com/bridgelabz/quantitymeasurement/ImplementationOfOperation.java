@@ -11,4 +11,9 @@ public class ImplementationOfOperation implements Operation {
         return volume1.value * volume1.unit.baseUnitConversion +
                 volume2.value * volume2.unit.baseUnitConversion;
     }
+    @Override
+    public double addition(Weight weight1, Weight weight2) {
+        return weight1.value * weight1.unit.baseUnitConversion +
+                weight2.value * weight2.unit.baseUnitConversion;
+    }
 }
