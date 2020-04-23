@@ -2,7 +2,7 @@ package com.bridgelabz.quantitymeasurement;
 
 public enum Unit {
     FEET(12.0), INCH(1.0), YARD(36.0),
-    CM(0.4), LITRE(1000), GALLON(3780), MILLILITRE(1.0);
+    CM(0.4), LITRE(1.0), GALLON(3.78), MILLILITRE(0.001);
 
     double baseUnitConversion;
 

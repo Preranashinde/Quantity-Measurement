@@ -180,4 +180,11 @@ public class QuantityTest {
         boolean compareCheck = Unit.compare(litre, mililitre);
         Assert.assertTrue(compareCheck);
     }
+    @Test
+    public void given1GallonAnd3Point78_shouldReturn7Point57litres() {
+        Volume gallon = new Volume(Unit.GALLON,1.0);
+        Volume litres = new Volume(Unit.LITRE,3.78);
+        double addition = operation.addition(gallon, litres);
+        Assert.assertEquals(7.57, addition,0.1);
+    }
 }

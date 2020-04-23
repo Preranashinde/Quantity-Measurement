@@ -6,4 +6,9 @@ public class ImplementationOfOperation implements Operation {
         return length1.value * length1.unit.baseUnitConversion +
                 length2.value * length2.unit.baseUnitConversion;
     }
+    @Override
+    public double addition(Volume volume1, Volume volume2) {
+        return volume1.value * volume1.unit.baseUnitConversion +
+                volume2.value * volume2.unit.baseUnitConversion;
+    }
 }
