@@ -187,4 +187,11 @@ public class QuantityTest {
         double addition = operation.addition(gallon, litres);
         Assert.assertEquals(7.57, addition,0.1);
     }
+    @Test
+    public void givenLitresAndMillilitres_performAddition_shouldReturnResultInLitres() {
+        Volume litre = new Volume(Unit.LITRE,1.0);
+        Volume mililitre = new Volume(Unit.MILLILITRE,1000.0);
+        double addition = operation.addition(litre, mililitre);
+        Assert.assertEquals(2.0, addition,0.0);
+    }
 }
