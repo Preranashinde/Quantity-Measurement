@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class QuantityTest {
+    Operation operation = new ImplementationOfOperation();
     @Test
     public void given0FeetAnd0Feet_shouldReturnEqual() {
         Length feet1 = new Length(Unit.FEET, 0.0);
@@ -141,24 +142,28 @@ public class QuantityTest {
     public void given2InchAnd2Inch_shouldReturn4Inch() {
         Length inch1 = new Length(Unit.INCH, 2.0);
         Length inch2 = new Length(Unit.INCH, 2.0);
-        Operation operation = new ImplementationOfOperation();
         double addition = operation.addition(inch1, inch2);
         Assert.assertEquals(4.0, addition, 0.0);
     }
     @Test
-    public void given1FeetAnd2Inch_shouldReturn4Inch() {
+    public void given1FeetAnd2Inch_shouldReturn14Inch() {
         Length feet = new Length(Unit.FEET, 1.0);
         Length inch = new Length(Unit.INCH, 2.0);
-        Operation operation = new ImplementationOfOperation();
         double addition = operation.addition(feet, inch);
         Assert.assertEquals(14.0, addition, 0.0);
     }
     @Test
-    public void given1FeetAnd1Feet_shouldReturn4Inch() {
+    public void given1FeetAnd1Feet_shouldReturn24Inch() {
         Length feet1 = new Length(Unit.FEET, 1.0);
         Length feet2 = new Length(Unit.FEET, 1.0);
-        Operation operation = new ImplementationOfOperation();
         double addition = operation.addition(feet1, feet2);
         Assert.assertEquals(24.0, addition, 0.0);
+    }
+    @Test
+    public void given2InchAnd2AndHalf_shouldReturn3Inch() {
+        Length inch = new Length(Unit.INCH, 2);
+        Length cm = new Length(Unit.CM, 2.5);
+        double addition = operation.addition(inch, cm);
+        Assert.assertEquals(3.0, addition, 0.0);
     }
 }
