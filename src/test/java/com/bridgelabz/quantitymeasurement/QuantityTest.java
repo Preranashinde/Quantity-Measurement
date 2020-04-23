@@ -139,9 +139,18 @@ public class QuantityTest {
     }
     @Test
     public void given2InchAnd2Inch_shouldReturn4Inch() {
+        Length inch1 = new Length(Unit.INCH, 2.0);
+        Length inch2 = new Length(Unit.INCH, 2.0);
+        Operation operation = new ImplementationOfOperation();
+        double addition = operation.addition(inch1, inch2);
+        Assert.assertEquals(4.0, addition, 0.0);
+    }
+    @Test
+    public void given1FeetAnd2Inch_shouldReturn4Inch() {
+        Length feet = new Length(Unit.FEET, 1.0);
         Length inch = new Length(Unit.INCH, 2.0);
         Operation operation = new ImplementationOfOperation();
-        double addition = operation.addition(inch, inch);
-        Assert.assertEquals(4.0, addition, 0.0);
+        double addition = operation.addition(feet, inch);
+        Assert.assertEquals(14.0, addition, 0.0);
     }
 }
