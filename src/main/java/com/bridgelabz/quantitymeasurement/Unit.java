@@ -2,7 +2,8 @@ package com.bridgelabz.quantitymeasurement;
 
 public enum Unit {
     FEET(12.0), INCH(1.0), YARD(36.0),
-    CM(0.4), LITRE(1.0), GALLON(3.78), MILLILITRE(0.001);
+    CM(0.4), LITRE(1.0), GALLON(3.78), MILLILITRE(0.001),
+    TONNE(1000.0), KILOGRAM(1.0), GRAM(0.001);
 
     double baseUnitConversion;
 
@@ -17,5 +18,9 @@ public enum Unit {
     public static boolean compare(Volume volume1, Volume volume2){
         return Double.compare(volume1.value * volume1.unit.baseUnitConversion,
                 volume2.value * volume2.unit.baseUnitConversion) == 0;
+    }
+    public static boolean compare(Weight weight1, Weight weight2){
+        return Double.compare(weight1.value * weight1.unit.baseUnitConversion,
+                weight2.value * weight2.unit.baseUnitConversion) == 0;
     }
 }
