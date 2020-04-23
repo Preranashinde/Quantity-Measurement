@@ -166,4 +166,11 @@ public class QuantityTest {
         double addition = operation.addition(inch, cm);
         Assert.assertEquals(3.0, addition, 0.0);
     }
+    @Test
+    public void given1GallonAnd3Point78litres_shouldRetunEqual() {
+        Volume gallon = new Volume(Unit.GALLON, 1.0);
+        Volume litre = new Volume(Unit.LITRE, 3.78);
+        boolean compareCheck = Unit.compare(gallon, litre);
+        Assert.assertTrue(compareCheck);
+    }
 }
