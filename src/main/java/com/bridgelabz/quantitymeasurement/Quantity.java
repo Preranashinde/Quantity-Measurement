@@ -1,10 +1,10 @@
 package com.bridgelabz.quantitymeasurement;
 
-public class Length {
+public class Quantity {
     public final Unit unit;
     public final double value;
 
-    public Length(Unit unit, double value) {
+    public Quantity(Unit unit, double value) {
         this.unit = unit;
         this.value = value;
     }
@@ -13,7 +13,7 @@ public class Length {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Length length = (Length) o;
-        return Double.compare(length.value, value) == 0 && unit == length.unit;
+        Quantity quantity = (Quantity) o;
+        return Double.compare(quantity.value, value) == 0 && unit == quantity.unit;
     }
 }

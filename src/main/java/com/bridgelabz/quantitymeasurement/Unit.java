@@ -4,7 +4,7 @@ public enum Unit {
     FEET(12.0), INCH(1.0), YARD(36.0),
     CM(0.4), LITRE(1.0), GALLON(3.78), MILLILITRE(0.001),
     TONNE(1000.0), KILOGRAM(1.0), GRAM(0.001),
-    FAHRENHEIT(1), CELSIUS(2.12);
+    FAHRENHEIT(1.0), CELSIUS(2.12);
 
     double baseUnitConversion;
 
@@ -12,17 +12,9 @@ public enum Unit {
         this.baseUnitConversion = baseUnitConversion;
     }
 
-    public static boolean compare(Length length1, Length length2) {
-        return Double.compare(length1.value * length1.unit.baseUnitConversion,
-                length2.value * length2.unit.baseUnitConversion) == 0;
-    }
-    public static boolean compare(Volume volume1, Volume volume2){
-        return Double.compare(volume1.value * volume1.unit.baseUnitConversion,
-                volume2.value * volume2.unit.baseUnitConversion) == 0;
-    }
-    public static boolean compare(Weight weight1, Weight weight2){
-        return Double.compare(weight1.value * weight1.unit.baseUnitConversion,
-                weight2.value * weight2.unit.baseUnitConversion) == 0;
+    public static boolean compare(Quantity quantity1, Quantity quantity2) {
+        return Double.compare(quantity1.value * quantity1.unit.baseUnitConversion,
+                quantity2.value * quantity2.unit.baseUnitConversion) == 0;
     }
     public static boolean compare(Temperature temperature1, Temperature temperature2){
         return Double.compare(temperature1.value * temperature1.unit.baseUnitConversion,
